@@ -1,6 +1,6 @@
 import AWS from 'aws-sdk';
 
-// Configure the AWS SDK with your credentials and region
+// Configure the AWS SDK 
 AWS.config.update({
   accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY,
@@ -14,7 +14,7 @@ export const uploadToS3 = (fileName, fileContent) => {
     Bucket: process.env.REACT_APP_S3_BUCKET_NAME,
     Key: fileName,
     Body: fileContent,
-    ContentType: 'video/mp4' // Adjust the content type if needed
+    ContentType: 'video/mp4' 
   };
 
   return new Promise((resolve, reject) => {
